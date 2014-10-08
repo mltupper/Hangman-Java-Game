@@ -25,7 +25,7 @@ public class Hangman {
     public static String getRandom(ArrayList<String> words){
         Random randomGenerator = new Random();
         int index = randomGenerator.nextInt(words.size());
-        System.out.println((words.get(index)).length());
+        System.out.println("Number of Letters: " + (words.get(index)).length());
         return words.get(index);
     }
     
@@ -55,6 +55,11 @@ public class Hangman {
      * @throws java.io.FileNotFoundException
      */
     public static void main(String[] args) throws FileNotFoundException{
+        
+        int open = 0;
+        int wins = 0;
+        int losses = 0;
+        while(open == 0){
         ArrayList<String> used = new ArrayList<>();
         ArrayList<String> words = new ArrayList<>();
         StringBuilder sb = new StringBuilder();
@@ -125,10 +130,21 @@ public class Hangman {
             }
         
        if (hangman == 10) {
+           losses++;
            System.out.println("You lost!");
-           System.out.println(random);
+           System.out.println("Answer: " + random);
+           System.out.println("Wins: " + wins + ", Losses: " + losses);
+           System.out.println("Starting new game.");
+           System.out.println("-----------------------------------------------------------------------------------");
        }
-       else System.out.println("You won!");
+       else {
+           wins++;
+           System.out.println("You won!");
+           System.out.println("Wins: " + wins + ", Losses: " + losses);
+           System.out.println("Starting new game.");
+           System.out.println("------------------------------------------------------------------------------------");
+       }
+       
     }
-        
+    }  
 }
