@@ -5,8 +5,6 @@ Currently the program will reject your letter input if the letter was FOUND, or 
 
 Things I will try to add/improve upon: 
 
-- Instructions within program.
-- Better readability. 
-- Ability to quit program without hard terminating it.
+- Error when user enters only white space 
 - "Hard" mode, which requires you to guess a letter within x seconds or you will get another "hangman" tally against you. 
 - ASCII hangman instead of tally. 
